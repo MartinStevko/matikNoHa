@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <title>Nový príspevok</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_new.css' %}">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <div id="gen">
+    {% for post in posts %}
+      {% if post.schvalene %}
+        <div id="mess">
+          <div id="author">
+            {{ post.author }}
+          </div>
+          <div id="bubble">
+            {{ post.obsah }}
+          </div>
+          <div id="cas">
+            {{ post.cas }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% if user.is_authenticated %}
+    <form method="POST">
+      {% csrf_token %}
+      <div id="f">
+        <textarea name="text" id="id_text" required></textarea>
+      </div>
+      <div id="g">
+        <input type="submit" value="Vytvor príspevok"/>
+      </div>
+    </form>
+  {% else %}
+    <p>Najprv sa prihlás</p>
+  {% endif %}
+</body>
+</html>

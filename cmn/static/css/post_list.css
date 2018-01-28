@@ -1,0 +1,45 @@
+#gen {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+#mess {
+  padding-bottom: 15px;
+}
+
+#bubble {
+  padding: 10px;
+	position: relative;
+	background: #eaebff;
+	border-radius: .6em;
+  font-size: 135%;
+}
+
+#c {
+  text-align: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+#but {
+  font-size: 150%;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #6e7184;
+  color: white;
+  text-align: center;
+}
+
+#cas {
+  text-align: right;
+  color: #afafaf;
+}
+
+#author {
+  padding-left: 7px;
+  font-size: 120%;
+  color: #afafaf;
+}

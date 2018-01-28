@@ -21,6 +21,6 @@ a stále:
 manage.py runserver 0.0.0.0:PORT_NUMBER
 ```
 
-## Application access
+## Prístup k aplikácii
 
 Po tomto sa na admin stránku dostaneš ak do prehliadača zadáš `localhost:PORT_NUMBER/admin` a do aplikácie ak zadáš `localhost:PORT_NUMBER/pokemoni` (`localhost` môže byť nahradený IP adresou servera, napríklad `192.168.1.47`).

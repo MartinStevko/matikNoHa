@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!-- Auto refresh results -->
+<meta http-equiv="refresh" content="10">
+
+<html>
+<head>
+    <title>Príspevky</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/manager.css' %}">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  {% if user.is_authenticated %}
+    <div id="gen">
+      {% for post in posts %}
+        <div id="mess">
+          <div id="author">
+            {{ post.author }}
+          </div>
+          <div>
+            <a id="bubble" href="approve/{{ post.id }}">
+              {{ post.obsah }}
+            </a>
+          </div>
+          <div id="cas">
+            {{ post.cas }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</body>
+</html>

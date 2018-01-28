@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!-- Auto refresh results -->
+<meta http-equiv="refresh" content="10">
+
+<html>
+<head>
+    <title>Príspevky</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <div id="gen">
+    {% for post in posts %}
+      <div id="mess">
+        <div id="author">
+          {{ post.author }}
+        </div>
+        <div id="bubble">
+          {{ post.obsah }}
+        </div>
+        <div id="cas">
+          {{ post.cas }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if user.is_authenticated %}
+    <div id="c">
+      <a href="posts/new">
+        <button id="but">+ Nový príspevok</button>
+      </a>
+    </div>
+  {% endif %}
+</body>
+</html>
